@@ -13,8 +13,11 @@
 7. opencv_python_headless>=4.6.0.66  
 8. pandas>=1.3.4     
 
-`git clone https://github.com/sysutexb/TinySSD.git`  
-`pip install -r requirements.txt`   
+```
+git clone https://github.com/sysutexb/TinySSD.git  
+cd TinySSD  
+pip install -r requirements.txt  
+```
   
   
 ## Training process  
@@ -22,7 +25,38 @@
 ### 1、Data generation  （TinySSD_create_train.py）  
 This file helps us generate a training dataset, which copies the target image to the background image to generate a new picture.    
 
-`python create_train.py`   
+```
+python3 TinySSD_create_train.py  
+```
+  
+If the code runs successfully, the structure of the dataset file is as follows:  
+  
+```  
+.
+├─data
+    ├─background
+    │      000012-16347456122a06.jpg
+    │	. . .
+    │      191328-15136820086f91.jpg
+    │      
+    ├─one_target_train
+    │  │  
+    │  └─images
+    │          
+    ├─target
+    │      0.png
+    │      1.png
+    │      
+    ├─test
+    │      1.jpg
+    │      2.jpg
+    │      3.jpg
+    │      4.jpg
+    │      
+    └─two_target_train
+        │  
+        └─images  
+```  
   
 ### 2、模型训练  
 在train.py中修改batch_size、epoch以及target_num之后运行。  
