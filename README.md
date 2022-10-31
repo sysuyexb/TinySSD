@@ -63,8 +63,8 @@ python3 TinySSD_create_train.py
 ```  
   
 ### Training  
-将合成图像导入TinySSD网络进行培训。
-培训流程如下图所示：  
+将合成图像导入TinySSD网络进行训练。
+训练流程如下图所示：  
 ![image](https://github.com/sysuyexb/TinySSD/blob/main/picture/train.png?raw=true)  
   
 1）训练图片先导入TinySSD中，生成多尺度的锚框，为每个锚框预测类别和偏移量  
@@ -84,9 +84,9 @@ python3 TinySSD_create_train.py
 测试流程如下图所示：  
 ![image](https://github.com/sysuyexb/TinySSD/blob/main/picture/test.png?raw=true)  
   
-1)将测试图片导入predict函数
-2）其内的multibox_detection函数计算出每个锚框的类别索引，置信度，预测边界框坐标
-3）调用非极大值抑制保留置信度大于阈值的锚框
+1)将测试图片导入predict函数  
+2）其内的multibox_detection函数计算出每个锚框的类别索引，置信度，预测边界框坐标  
+3）调用非极大值抑制保留置信度大于阈值的锚框  
 4)使用display函数输出测试结果
   
 `python3 TinySSD_test.py`  
