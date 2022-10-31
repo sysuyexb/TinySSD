@@ -14,8 +14,8 @@
 7. opencv_python_headless>=4.6.0.66  
 8. pandas>=1.3.4     
 
-`git clone https://github.com/sysutexb/TinySSD.git  
-pip install -r requirements.txt`   
+`git clone https://github.com/sysutexb/TinySSD.git`  
+`pip install -r requirements.txt`   
   
   
   
