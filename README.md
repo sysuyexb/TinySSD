@@ -33,29 +33,33 @@ If the code runs successfully, the structure of the dataset file is as follows:
   
 ```  
 .
-├─data
+├─detection
     ├─background
     │      000012-16347456122a06.jpg
-    │	. . .
-    │      191328-15136820086f91.jpg
+    │      000043-157305604379c0.jpg
+    │	       .
+    │	       .
+    │	       .
     │      
-    ├─one_target_train
+    ├─sysu_train
+    │  │  
+    │  └─label.csv  
     │  │  
     │  └─images
+    │         000012-16347456122a06.jpg
+    │         000043-157305604379c0.jpg
+    │	             .
+    │	             .
+    │	             .
     │          
     ├─target
     │      0.png
-    │      1.png
+    │      0.jpg
     │      
-    ├─test
-    │      1.jpg
-    │      2.jpg
-    │      3.jpg
-    │      4.jpg
-    │      
-    └─two_target_train
-        │  
-        └─images  
+    └─test
+           1.jpg
+           2.jpg
+
 ```  
   
 ### 2、模型训练  
