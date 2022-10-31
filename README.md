@@ -23,13 +23,13 @@ pip install -r requirements.txt
 ## Training process  
 
 ### 1、Data generation  （TinySSD_create_train.py）  
-This file helps us generate a training dataset, which copies the target image to the background image to generate a new picture.    
+这个文件帮助我们生成一个训练数据集，它将目标图像复制到背景图像以生成新的图片。    
 
 ```
 python3 TinySSD_create_train.py  
 ```
   
-If the code runs successfully, the structure of the dataset file is as follows:  
+如果代码成功运行，数据集的结构如下:  
   
 ```  
 .
@@ -62,14 +62,20 @@ If the code runs successfully, the structure of the dataset file is as follows:
 
 ```  
   
-### 2、模型训练  
-在train.py中修改batch_size、epoch以及target_num之后运行。  
-训练好的模型存入文件夹net中对应的子文件夹，设置为每10轮存储一次。  
+### 2、Train  
+将合成图像导入TinySSD网络进行培训。
+培训流程如下图所示：
+![image](https://github.com/sysuyexb/TinySSD/blob/main/picture/train.png?raw=true)  
+  
+1）训练图片先导入TinySSD中，生成多尺度的锚框，为每个锚框预测类别和偏移量  
+2）然后使用multibox_target函数为每个锚框标注类别和偏移量  
+3）接着使用calc_loss函数计算损失（根据类别和偏移量的预测和标注值）,反向传播  
+4）最后使用cls_eval和bbox_eval计算类别损失和偏移损失  
+  
 
 `python train.py`  
   
-如果训练成功，运行框将如下图所示：  
-![ao](results/train_result.png"训练成功结果")  
+
   
   
 ### 3、模型测试  
