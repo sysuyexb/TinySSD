@@ -1,5 +1,8 @@
 # TinySSD  
-**Artificial intelligence principle experiment: sorting out TinySSD code**  
+**Artificial intelligence principle experiment: sorting out TinySSD code**   
+## Author  
+叶兴彬  
+
 ## Installation  
 ### Requirements  
 1. Python3
@@ -12,7 +15,7 @@
 8. pandas>=1.3.4     
 
 `git clone https://github.com/sysutexb/TinySSD.git  
-`cd SSD ` 
+`cd TinySSD` 
 `pip install -r requirements.txt`
 
 ## 数据目录介绍  
