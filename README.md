@@ -22,7 +22,7 @@ pip install -r requirements.txt
   
 ## Training process  
 
-### 1、Data generation  （TinySSD_create_train.py）  
+### Data generation  
 这个文件帮助我们生成一个训练数据集，它将目标图像复制到背景图像以生成新的图片。    
 
 ```
@@ -62,30 +62,43 @@ python3 TinySSD_create_train.py
 
 ```  
   
-### 2、Train  
+### Training  
 将合成图像导入TinySSD网络进行培训。
-培训流程如下图所示：
+培训流程如下图所示：  
 ![image](https://github.com/sysuyexb/TinySSD/blob/main/picture/train.png?raw=true)  
   
 1）训练图片先导入TinySSD中，生成多尺度的锚框，为每个锚框预测类别和偏移量  
 2）然后使用multibox_target函数为每个锚框标注类别和偏移量  
 3）接着使用calc_loss函数计算损失（根据类别和偏移量的预测和标注值）,反向传播  
-4）最后使用cls_eval和bbox_eval计算类别损失和偏移损失  
+4）最后使用cls_eval和bbox_eval计算类别损失和偏移损失 
+5)训练成功的网络保存到net文件夹
   
 
-`python train.py`  
+`python3 TinySSD_train.py`  
   
 
   
   
-### 3、模型测试  
-在test.py中修改对应的target_num之后运行。  
-运行结果将展示带有目标检测框的图片。  
+### Testing  
+将调用训练成功的网络进行目标检测效果测试。  
+测试流程如下图所示：  
+![image](https://github.com/sysuyexb/TinySSD/blob/main/picture/test.png?raw=true)  
   
-`python test.py`  
+1)将测试图片导入predict函数
+2）其内的multibox_detection函数计算出每个锚框的类别索引，置信度，预测边界框坐标
+3）调用非极大值抑制保留置信度大于阈值的锚框
+4)使用display函数输出测试结果
   
-测试结果展示（目标检测框左上角给出"类别：置信度"）：  
-![ao](results/one_target.png"训练成功结果")  
+`python3 TinySSD_test.py`  
+  
+使用net_30.pkl的结果如下图所示：  
+![image](https://github.com/sysuyexb/TinySSD/blob/main/picture/2.png?raw=true)     
+  
+    
+  
+### Improvement  
+从数据方面进行效果提升  
+对生成的训练数据采用数据增强的方法，包括
 
  
 
