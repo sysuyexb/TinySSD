@@ -1,5 +1,5 @@
 # TinySSD  
-Artificial intelligence principle experiment: sorting out tiny SSD code  
+**Artificial intelligence principle experiment: sorting out tiny SSD code**  
 ## Installation
 CUDA Version = 10.1（可选）  
 Python = 3.9  
