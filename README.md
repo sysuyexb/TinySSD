@@ -23,7 +23,8 @@ pip install -r requirements.txt
 ## Training process  
 
 ### Data generation  
-这个文件帮助我们生成一个训练数据集，它将目标图像复制到背景图像以生成新的图片。    
+这个文件帮助我们生成一个训练数据集，它将目标图像复制到背景图像以生成新的图片。  
+在这之前，你需要将自己的背景图片放到background文件夹中。
 
 ```
 python3 TinySSD_create_train.py  
