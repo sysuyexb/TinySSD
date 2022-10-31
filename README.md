@@ -1,19 +1,20 @@
 # TinySSD  
-**Artificial intelligence principle experiment: sorting out tiny SSD code**  
-## Installation
-CUDA Version = 10.1（可选）  
-Python = 3.9  
-PyTorch = 1.8.1  
-matplotlib==3.5.3  
-numpy==1.20.3  
-opencv_python_headless==4.6.0.66  
-pandas==1.3.4  
-torch==1.8.1+cu101   
-torchvision==0.9.1+cu101  
-  
-可以手动安装依赖，也可以直接运行以下代码   
+**Artificial intelligence principle experiment: sorting out TinySSD code**  
+## Installation  
+### Requirements  
+1. Python3
+2. PyTorch >=1.8
+3. matplotlib >=3.5  
+4. numpy>=1.20.3  
+5. torch>=1.8.1+cu101   
+6. torchvision>=0.9.1+cu101  
+7. opencv_python_headless>=4.6.0.66  
+8. pandas>=1.3.4     
 
-`pip install -r requirements.txt`  
+`git clone https://github.com/sysutexb/TinySSD.git  
+cd SSD  
+pip install -r requirements.txt`
+
 ## 数据目录介绍  
 ```  
 .
