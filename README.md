@@ -1,7 +1,6 @@
 # TinySSD  
 **Artificial intelligence principle experiment: sorting out TinySSD code**   
-## Author  
-**叶兴彬   20354148**  
+
 
 ## Installation  
 ### Requirements  
@@ -62,7 +61,8 @@
 
  
 
-
+## Author  
+**叶兴彬   20354148**  
 
 
 
