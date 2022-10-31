@@ -71,7 +71,7 @@ python3 TinySSD_create_train.py
 2）然后使用multibox_target函数为每个锚框标注类别和偏移量  
 3）接着使用calc_loss函数计算损失（根据类别和偏移量的预测和标注值）,反向传播  
 4）最后使用cls_eval和bbox_eval计算类别损失和偏移损失 
-5)训练成功的网络保存到net文件夹
+5) 训练成功的网络保存到net文件夹
   
 
 `python3 TinySSD_train.py`  
@@ -84,10 +84,10 @@ python3 TinySSD_create_train.py
 测试流程如下图所示：  
 ![image](https://github.com/sysuyexb/TinySSD/blob/main/picture/test.png?raw=true)  
   
-1)将测试图片导入predict函数  
-2）其内的multibox_detection函数计算出每个锚框的类别索引，置信度，预测边界框坐标  
+1) 将测试图片导入predict函数  
+2）multibox_detection函数计算出每个锚框的类别索引，置信度，预测边界框坐标  
 3）调用非极大值抑制保留置信度大于阈值的锚框  
-4)使用display函数输出测试结果
+4) 使用display函数输出测试结果
   
 `python3 TinySSD_test.py`  
   
@@ -98,7 +98,14 @@ python3 TinySSD_create_train.py
   
 ### Improvement  
 从数据方面进行效果提升  
-对生成的训练数据采用数据增强的方法，包括
+1)对生成的训练数据采用数据增强的方法，包括水平随机翻转、垂直随机翻转、调整锐度、随机剪裁、色域调整等。  
+RandomHorizontalFlip(),RandomVerticalFlip(),RandomAdjustSharpness(),RandomCrop(),ColorJitter()  
+2)生成的训练数据集存放在improvement文件夹的train_trans中，网络保存在improvement文件夹的net_1中  
+3)修改TinySSD_train读取数据的路径和网络保存的路径  
+4)修改TinySSD_test载入网络的路径，得到的测试结果如下图所示：  
+  
+使用net_20.pkl的结果如下图所示：  
+![image](https://github.com/sysuyexb/TinySSD/blob/main/picture/3.png?raw=true)    
 
  
 
