@@ -12,8 +12,8 @@
 8. pandas>=1.3.4     
 
 `git clone https://github.com/sysutexb/TinySSD.git  
-cd SSD  
-pip install -r requirements.txt`
+`cd SSD ` 
+`pip install -r requirements.txt`
 
 ## 数据目录介绍  
 ```  
