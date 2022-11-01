@@ -85,10 +85,10 @@ python3 TinySSD_create_train.py
 测试流程如下图所示：  
 ![image](https://github.com/sysuyexb/TinySSD/blob/main/picture/test.png?raw=true)  
   
-1) 将测试图片导入predict函数  
+1）将测试图片导入predict函数  
 2）multibox_detection函数计算出每个锚框的类别索引，置信度，预测边界框坐标  
 3）调用非极大值抑制保留置信度大于阈值的锚框  
-4) 使用display函数输出测试结果
+4）使用display函数输出测试结果
   
 `python3 TinySSD_test.py`  
   
